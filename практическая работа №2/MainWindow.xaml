@@ -1,0 +1,46 @@
+﻿<Window x:Class="практическая_работа__2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:практическая_работа__2"
+        mc:Ignorable="d"
+        Title="MainWindow" Closing="Window_Closing" Height="500" Width="1000">
+    <Grid>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Заплнить" ></MenuItem>
+                <MenuItem Header="Рассчитать" ></MenuItem>
+                <MenuItem Header="Настройки" Click="SetsForm"></MenuItem>
+                <MenuItem Header="Сохранить" Click="saveMatrix_button" ></MenuItem>
+                <MenuItem Header="Загрузить" Click="Loading_button"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Выход" Click="Close_Button"></MenuItem>
+            <MenuItem Header="Информация" Click="Info_Button"></MenuItem>
+        </Menu>
+
+        <GroupBox Header="Исходные данные" Margin="0,0,326,175" HorizontalAlignment="Right"  VerticalAlignment="Bottom">
+            <Grid Height="236" VerticalAlignment="Top" HorizontalAlignment="Center" Width="505">
+                <TextBox x:Name="MatrixRows" HorizontalAlignment="Left" Margin="44,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="MatrixColumn" HorizontalAlignment="Left" Margin="227,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Столбцы" HorizontalAlignment="Left" Margin="164,195,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.155,0.561"/>
+                <Label Content="Строки" HorizontalAlignment="Left" Margin="347,192,0,0" VerticalAlignment="Top"/>
+                <DataGrid x:Name="NumbersTable2" MouseDoubleClick="FocusArray" CanUserAddRows="False" HorizontalAlignment="Left" Height="186" Margin="10,3,0,0" VerticalAlignment="Top" Width="485"/>
+                <Button Content="Заполнить" HorizontalAlignment="Left" Click="FillMatrix_button" Margin="416,198,0,0" VerticalAlignment="Top"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Результат" Margin="0,294,336,0" HorizontalAlignment="Right" Width="478" Height="75" VerticalAlignment="Top">
+            <Grid Height="63" VerticalAlignment="Center" HorizontalAlignment="Center" Width="490">
+                <TextBox x:Name="MaxColumn" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Margin="168,0,0,0"/>
+                <Label Content="Среднее арифметическое" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <Button Content="Рассчитать" Click="MaxColumnNamber_button" HorizontalAlignment="Left" Margin="391,0,0,0" VerticalAlignment="Center"/>
+            </Grid>
+        </GroupBox>
+        <StatusBar Margin="196,387,485,55">
+            <TextBlock x:Name="tableSize" TextWrapping="Wrap" Text="" Width="156"/>
+            <Separator/>
+            <TextBlock x:Name="cellNumber" TextWrapping="Wrap" Text="" Width="171"/>
+        </StatusBar>
+    </Grid>
+</Window>
